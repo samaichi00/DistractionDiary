@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <script>
-const HASH=;$pw = "3fb7aad0b58555a336fd195baf857147d6d16cfd5fa8950f78fe14c1f17e26a5" ＝indexと同じ 
-$sha256 = [System.BitConverter]::ToString(
-  [System.Security.Cryptography.SHA256]::Create().ComputeHash(
-    [System.Text.Encoding]::UTF8.GetBytes($pw)
-  )
-).Replace("-", "").ToLower()
-$sha256// index.htmlと同じ
+const HASH="3fb7aad0b58555a336fd195baf857147dd616cfd5fa8950f78fe14c1f7e26a5";
 const OKKEY="ok-"+HASH;
-if(sessionStorage.getItem("auth")!==OKKEY){
-  location.replace("index.html");            // 直リンクを弾く
+if (sessionStorage.getItem("auth") !== OKKEY) {
+  location.replace("index.html");   // 直リンクを弾く
 }
 </script>
+
 <!-- ここから先に元の本編のHTML -->
 <html lang="ja">
 <head>
