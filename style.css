@@ -1,0 +1,43 @@
+/* ===== 共通スタイル ===== */
+body {
+  background-color: #000;
+  background-image: url("vine-left.png"), url("vine-right.png");
+  background-position: left top, right top;
+  background-repeat: repeat-y, repeat-y;
+  background-attachment: fixed, fixed;
+
+  color: #fff;
+  font-family: "游明朝", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* タイトル */
+h1.site-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: 3.5em;
+  color: #ff00bf;   /* マゼンタ */
+  line-height: 1.1;
+  margin: 0.5em 0;
+}
+
+/* サブタイトル */
+.subtitle {
+  font-style: italic;
+  margin: 0.2em 0 1em 0;
+}
+
+/* リンク色 */
+a {
+  color: purple;        /* 通常紫 */
+  text-decoration: none;
+}
+a:visited {
+  color: lightblue;     /* 踏んだあと水色 */
+}
+a:hover {
+  color: yellow;        /* ホバー時黄色 */
+}
+

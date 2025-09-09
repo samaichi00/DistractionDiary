@@ -1,0 +1,16 @@
+/ (サイトの箱)
+  index.html
+  story.html
+  about.html
+  updates.html  ←任意
+  latest.html
+  /dd/  ← Distraction Diary
+    01.html
+    02.html
+    toc.html
+  /ao/  ← 青の事件簿
+    01.html
+    toc.html
+  /mf/  ← 冥府の虎
+    01.html
+    toc.html
