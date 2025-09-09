@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<script>
+const HASH="YOUR_HASH_HERE";$pw = "3fb7aad0b58555a336fd195baf857147d6d16cfd5fa8950f78fe14c1f17e26a5" ＝indexと同じ 
+$sha256 = [System.BitConverter]::ToString(
+  [System.Security.Cryptography.SHA256]::Create().ComputeHash(
+    [System.Text.Encoding]::UTF8.GetBytes($pw)
+  )
+).Replace("-", "").ToLower()
+$sha256// index.htmlと同じ
+const OKKEY="ok-"+HASH;
+if(sessionStorage.getItem("auth")!==OKKEY){
+  location.replace("index.html");            // 直リンクを弾く
+}
+</script>
+<!-- ここから先に元の本編のHTML -->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Distraction Diary</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- タイトル用フォント（Abril Fatface） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="site-title">Distraction<br>Diary</h1>
+  <p class="subtitle">――魂の軌跡と欠片。</p>
+
+  <hr>
+
+  <p><a href="about.html">About</a> ／ <a href="story.html">展示室（Story分岐）</a></p>
+
+  <hr>
+
+  <p><a href="01.html">▶ 最新話へ</a></p>
+  <p><a href="01.html">はじめから読む</a></p>
+  <p><a href="dd.toc.html">目次</a></p>
+
+  <hr>
+
+  <p><a href="update.html">更新履歴</a></p>
+</body>
+</html>
