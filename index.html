@@ -10,7 +10,7 @@ input,button{font-size:16px;padding:10px} .msg{color:#c00;margin-top:8px}
 <button id="go">入る</button>
 <div class="msg" id="msg"></div>
 <script>
-const HASH = "YOUR_HASH_HERE";3fb7aad0b58555a336fd195baf857147d6d16cfd5fa8950f78fe14c1f17e26a5// ← ここにSHA-256を入れる
+const HASH = "3fb7aad0b58555a336fd195baf857147dd616cfd5fa8950f78fe14c1f7e26a5";
 const OKKEY = "ok-"+HASH;
 
 async function sha256(txt){
@@ -30,3 +30,4 @@ document.getElementById("go").onclick = async () => {
 };
 </script>
 </html>
+
