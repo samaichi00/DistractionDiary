@@ -41,3 +41,8 @@ a:hover {
   color: yellow;        /* ホバー時黄色 */
 }
 
+/* ===== ナビゲーション調整 ===== */
+.nav--no-prefix::before {
+  content: "";   /* TOP を消す */
+}
+
