@@ -1,0 +1,79 @@
+<!doctype html><html lang="ja"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ギャラリー</title>
+<style>
+:root{--fg:#eee;--bg:#000;--accent:#ff4fcf}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system}
+main{max-width:1100px;margin:6vh auto;padding:24px}
+h1{color:var(--accent);text-align:center;margin:0 0 16px}
+.desc{opacity:.8;text-align:center;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.card{position:relative;aspect-ratio:1/1;border:1px solid #333;border-radius:12px;overflow:hidden;cursor:zoom-in}
+.card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05)}
+.card figcaption{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);font-size:.85rem;padding:6px 8px}
+a,button{color:var(--accent)}
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;display:block}
+.lb .meta{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;color:#ddd;text-align:center}
+.lb .ctrl{position:fixed;top:50%;transform:translateY(-50%);display:flex;gap:16px;width:100%;justify-content:space-between;padding:0 16px}
+.lb button{background:transparent;border:1px solid #666;border-radius:10px;padding:10px 14px;font-size:16px}
+.lb .close{position:fixed;top:16px;right:16px}
+kbd{border:1px solid #555;padding:1px 4px;border-radius:4px;font-size:.8em}
+.nav{margin-top:20px;text-align:center}
+</style>
+
+<main>
+  <h1>ギャラリー</h1>
+  <p class="desc">画像をタップ / クリックで拡大。← → / Esc も使える。</p>
+
+  <!-- ここに画像カードを増やす。thumb は一覧用、full は拡大用 -->
+  <section class="grid" id="grid">
+    <figure class="card">
+      <img src="gallery/thumbs/sample1.jpg" data-full="gallery/full/sample1.jpg" alt="作品1" loading="lazy">
+      <figcaption>作品1：タイトルや一言</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="gallery/thumbs/sample2.jpg" data-full="gallery/full/sample2.jpg" alt="作品2" loading="lazy">
+      <figcaption>作品2</figcaption>
+    </figure>
+    <!-- ↓このブロックをコピペして増やす -->
+  </section>
+
+  <div class="nav"><a href="main.html">⌂ TOPへ戻る</a></div>
+</main>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" aria-modal="true" role="dialog">
+  <button class="close" id="close" aria-label="閉じる">✕</button>
+  <div class="ctrl">
+    <button id="prev" aria-label="前へ">←</button>
+    <button id="next" aria-label="次へ">→</button>
+  </div>
+  <img id="lbimg" alt="">
+  <div class="meta"><span id="label"></span><div style="opacity:.7;font-size:.85em;margin-top:6px">
+    キー: <kbd>←</kbd> <kbd>→</kbd> <kbd>Esc</kbd></div></div>
+</div>
+
+<script>
+const cards=[...document.querySelectorAll('.card img')];
+const lb=document.getElementById('lb'), imgEl=document.getElementById('lbimg');
+const label=document.getElementById('label'); let i=0;
+function openAt(idx){ i=idx; const im=cards[i]; imgEl.src=im.dataset.full||im.src; imgEl.alt=im.alt; label.textContent=im.alt||""; lb.classList.add('open'); }
+function close(){ lb.classList.remove('open'); imgEl.src=""; }
+function next(){ openAt((i+1)%cards.length); }
+function prev(){ openAt((i-1+cards.length)%cards.length); }
+cards.forEach((im,idx)=>im.parentElement.addEventListener('click',()=>openAt(idx)));
+document.getElementById('close').onclick=close;
+document.getElementById('next').onclick=next;
+document.getElementById('prev').onclick=prev;
+lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') close();
+  if(e.key==='ArrowRight') next();
+  if(e.key==='ArrowLeft') prev();
+});
+</script>
+</html>
