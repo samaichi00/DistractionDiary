@@ -13,6 +13,14 @@ body{
   background-position:left top,right top;
   background-repeat:repeat-y,repeat-y;
   background-attachment:fixed,fixed;
+  @font-face{
+  font-family: 'Playfair Display Local';
+  src: url('playfair_Display.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
   /* 叶：蔓サイズ調整＋連続スクロール */
 body{
   background-color:#000;
@@ -108,6 +116,7 @@ h1.site-title{
   line-height:1.1 !important;
   margin:0.5em 0 !important;
 }
+
 
 
 
