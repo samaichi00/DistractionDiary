@@ -1,5 +1,13 @@
 /* ====== 全体適用：黒背景＋蔓（だけ） ====== */
 body{
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+  .page h1.site-title{
+  font-family: 'Abril Fatface', serif !important;  /* ← family名はスペース入り */
+  color:#ff00bf !important;
+  font-size:3.5em !important;
+  line-height:1.1 !important;
+  margin:0.5em 0 !important;
+}
   background-color:#000;
   background-image:url("vine-left.png"),url("vine-right.png");
   background-position:left top,right top;
@@ -72,5 +80,6 @@ a:visited{ color:lightblue; }
   .page h1{ font-size:1.9rem; }
   .toc-list a{ font-size:1rem; }
 }
+
 
 
