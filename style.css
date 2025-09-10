@@ -64,3 +64,107 @@ h2 {
   font-weight: bold;
 }
 
+/* ===== 五条悟目次 用 ===== */
+:root{
+  --c-bg:#000;
+  --c-text:#fff;
+  --c-accent:#58c1d8;   /* 見出しの水色 */
+  --c-link:purple;      /* 通常リンク */
+  --c-visited:lightblue;/* 既読 */
+  --c-hover:yellow;     /* ホバー */
+}
+
+.page{
+  max-width: 680px;         /* 画面の中央に細い“紙”を置く */
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+  text-align: center;
+}
+
+.page h1{
+  color: var(--c-accent);
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.subtitle{
+  opacity: .85;
+  margin: 0 0 24px;
+}
+
+.sec{
+  color: var(--c-accent);
+  font-size: 1.2rem;
+  margin: 28px 0 8px;
+  font-weight: 700;
+}
+
+/* 目次リスト */
+.toc-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: grid;
+  gap: 10px;               /* 行間を一定に */
+}
+
+.toc-list li{
+  position: relative;
+  padding: 8px 12px;
+  border-top: 1px solid rgba(255,255,255,.15); /* 細い区切り線 */
+}
+
+.toc-list li:first-child{ border-top: none; }
+
+.toc-list a{
+  color: var(--c-link);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.toc-list a:visited{ color: var(--c-visited); }
+.toc-list a:hover{ color: var(--c-hover); }
+
+/* 戻る */
+.back{ margin-top: 28px; }
+
+/* スマホ微調整 */
+@media (max-width:480px){
+  .page{ padding: 36px 14px 56px; }
+  .page h1{ font-size: 1.9rem; }
+  .toc-list a{ font-size: 1rem; }
+}
+
+/* ===== リンク色指定 ===== */
+
+/* 通常リンク（白基準） */
+.toc-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.toc-list a:hover {
+  color: red;
+}
+
+.toc-list a:visited {
+  color: #58c1d8; /* 水色 */
+}
+
+/* 番外編だけ色を変える */
+.toc-list a.extra {
+  color: limegreen;
+}
+
+.toc-list a.extra:hover {
+  color: yellow;
+}
+
+.toc-list a.extra:visited {
+  color: #fff;
+}
+
+
