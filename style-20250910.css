@@ -1,22 +1,15 @@
-/* ====== 全体適用：黒背景＋蔓（だけ） ====== */
+/* =========================
+   Global base（黒＋蔓のみ全体適用）
+   ※ フォント読み込みは HTML <head> の <link> でOK（Abril / Playfair）
+   ========================= */
 body{
-  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-  .page h1.site-title{
-  font-family: 'Abril Fatface', serif !important;  /* ← family名はスペース入り */
-  color:#ff00bf !important;
-  font-size:3.5em !important;
-  line-height:1.1 !important;
-  margin:0.5em 0 !important;
-}
-body{
-  /* ▼ここから背景設定（置き換え） */
-  background-color:#000;
-  background-image:url("vine-left.png"), url("vine-right.png");
-  background-position:left top, right top;
-  background-repeat:repeat-y, repeat-y;
-  background-attachment:scroll, scroll;              /* fixed → scroll */
-  background-size:120px auto, 120px auto;            /* 幅を小さく（好みで100〜160） */
-  /* ▲ここまで */
+  /* 黒＋蔓：小さめ／スクロール連続。!important でページ内<style>にも勝つ */
+  background-color:#000 !important;
+  background-image:url("vine-left.png"), url("vine-right.png") !important;
+  background-position:left top, right top !important;
+  background-repeat:repeat-y, repeat-y !important;
+  background-attachment:scroll, scroll !important;
+  background-size:120px auto, 120px auto !important;
 
   color:#fff;
   font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
@@ -24,54 +17,22 @@ body{
   text-align:center;
   margin:0; padding:0;
 }
-
-  @font-face{
-  font-family: 'Playfair Display Local';
-  src: url('playfair_Display.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-  /* 叶：蔓サイズ調整＋連続スクロール */
-body{
-  background-color:#000;
-  background-image:url("vine-left.png"), url("vine-right.png");
-  background-position: left top, right top;
-  background-repeat: repeat-y, repeat-y;
-  background-attachment: scroll, scroll;      /* ← fixed をやめる */
-  background-size: 120px auto, 120px auto;    /* ← 好みで 100~160px に調整 */
-  color:#fff;
-  font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
-  line-height:1.8;
-  text-align:center;
-  margin:0; padding:0;
-}
-
-/* スマホはさらに細く */
 @media (max-width:480px){
-  body{ background-size: 90px auto, 90px auto; }
+  body{ background-size:90px auto, 90px auto !important; }
 }
 
-  color:#fff;  /* 文字は白（中立） */
-  font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
-  line-height:1.8;
-  text-align:center;
-  margin:0; padding:0;
-}
-
-/* ====== 共通レイアウト（中立） ====== */
+/* =========================
+   Common layout
+   ========================= */
 .page{ max-width:680px; margin:0 auto; padding:48px 20px 64px; text-align:center; }
 .page h1,.page h2{ color:#fff; font-weight:700; }
 .page h1{ font-size:2.2rem; line-height:1.3; margin:0 0 8px; }
 .page h2{ font-size:1.2rem; margin:1.2em 0 .6em; }
 
-/* 共通リンク（中立）。シリーズ別は下で上書き */
 a{ color:purple; text-decoration:none; }
 a:hover{ color:yellow; }
 a:visited{ color:lightblue; }
 
-/* 目次リスト（中立） */
 .toc-list{ list-style:none; padding:0; margin:0 0 20px; display:grid; gap:10px; }
 .toc-list li{ position:relative; padding:8px 12px; border-top:1px solid rgba(255,255,255,.15); }
 .toc-list li:first-child{ border-top:none; }
@@ -79,94 +40,63 @@ a:visited{ color:lightblue; }
 .toc-list a:hover{ color:red; }
 .toc-list a:visited{ color:#58c1d8; }
 
-/* 戻るリンク（中立） */
 .back a{ color:#fff; text-decoration:none; }
 .back a:hover{ color:red; }
 .back a:visited{ color:#58c1d8; }
 
-/* 本文：素のテキストをそのまま表示 */
 .story-pre{
-  white-space: pre-wrap; line-height:1.8; margin:0; font-family:inherit; word-break:break-word;
+  white-space:pre-wrap; line-height:1.8; margin:0;
+  font-family:inherit; word-break:break-word;
 }
 
-/* ====== 個別適用（ページごとの上書き） ====== */
-/* 五条：タイトル水色だけを付与 */
-.theme-gojo .page h1{ color:#58c1d8; }
-/* 五条の番外編（1行リンク） */
-.toc-list a.bonus{ color:#fff; }
-.toc-list a.bonus:hover{ color:yellow; }
-.toc-list a.bonus:active, .toc-list a.bonus:visited{ color:#000; }
-
-/* おれとわたし：タイトル白＋ターコイズの光、リンク配色を変更 */
-.theme-orewa .page h1{
-  color:#fff;
-  text-shadow:0 0 8px rgba(64,224,208,.45),0 0 18px rgba(64,224,208,.30);
-}
-.theme-orewa .toc-list a, .theme-orewa .back a{ color:#fff; }
-.theme-orewa .toc-list a:hover, .theme-orewa .back a:hover{ color:#40E0D0; }   /* Turquoise */
-.theme-orewa .toc-list a:visited, .theme-orewa .back a:visited{ color:#98FF98; } /* Mint */
-
-}
-.theme-orewa .toc-list a, .theme-orewa .back a{ color:#fff; }
-.theme-orewa .toc-list a:hover, .theme-orewa .back a:hover{ color:#40E0D0; }   /* Turquoise */
-.theme-orewa .toc-list a:visited, .theme-orewa .back a:visited{ color:#98FF98; } /* Mint */
-
-/* Aboutだけ：h2を水色（他ページは白のまま） */
-.page-about .page h2{ color:#58c1d8; font-size:1.5em; margin:1em 0 .5em; }
-
-/* スマホ微調整 */
 @media (max-width:480px){
   .page{ padding:36px 14px 56px; }
   .page h1{ font-size:1.9rem; }
   .toc-list a{ font-size:1rem; }
 }
-/* トップのタイトルだけは Abril Fatface + マゼンタに固定 */
+
+/* =========================
+   Page / Series scoped
+   ※ HTML側の<body>にクラスを付ける
+      - 五条: <body class="theme-gojo">
+      - おれとわたし: <body class="theme-orewa">
+      - About: <body class="page-about">
+      - Story一覧: <body class="page-story">
+   ========================= */
+
+/* 五条：見出しを水色 */
+.theme-gojo .page h1{ color:#58c1d8; }
+
+/* おれとわたし：見出しを #caa9ff（薄紫）＋淡い光、リンク配色を変更 */
+.theme-orewa .page h1{
+  color:#caa9ff;
+  text-shadow:0 0 10px rgba(202,169,255,.45), 0 0 22px rgba(202,169,255,.25);
+}
+.theme-orewa .toc-list a,
+.theme-orewa .back a{ color:#fff; }
+.theme-orewa .toc-list a:hover,
+.theme-orewa .back a:hover{ color:#40E0D0; }   /* Turquoise */
+.theme-orewa .toc-list a:visited,
+.theme-orewa .back a:visited{ color:#98FF98; } /* Mint */
+
+/* 五条の番外編（1行リンク）：白→黄→既読黒 */
+.toc-list a.bonus{ color:#fff; }
+.toc-list a.bonus:hover{ color:yellow; }
+.toc-list a.bonus:active,
+.toc-list a.bonus:visited{ color:#000; }
+
+/* About / Story の表題フォントを Playfair Display に（英字部分に適用） */
+.page-about .page h1,
+.page-story  .page h1{
+  font-family:'Playfair Display','Times New Roman',serif !important;
+  font-weight:700;
+}
+
+/* TOPだけ Abril Fatface + マゼンタ（HTML: <h1 class="site-title">） */
 h1.site-title{
-  font-family: 'Abril Fatface', serif !important;
+  font-family:'Abril Fatface',serif !important;
   color:#ff00bf !important;
   font-size:3.5em !important;
   line-height:1.1 !important;
   margin:0.5em 0 !important;
 }
-@media (max-width:480px){
-  body{ background-size:90px auto, 90px auto; }
-}
-/* 強制上書き（最後に置く） */
-body{
-  background-attachment:scroll, scroll !important;
-  background-size:120px auto, 120px auto !important;
-}
-/* About/Story の表題だけ Playfair Display にする */
-.page-about .page h1,
-.page-story  .page h1{
-  font-family: 'Playfair Display', 'Times New Roman', serif !important;
-  font-weight: 700;
-}
-/* === 全ページ強制：黒＋蔓（最後に置く） === */
-body{
-  background-color:#000 !important;
-  background-image:url("vine-left.png"), url("vine-right.png") !important;
-  background-position:left top, right top !important;
-  background-repeat:repeat-y, repeat-y !important;
-  background-attachment:scroll, scroll !important;   /* 連続スクロール */
-  background-size:120px auto, 120px auto !important; /* 太さは好みで調整 */
-}
-@media (max-width:480px){
-  body{ background-size:90px auto, 90px auto !important; }
-}
-/* スマホ用にさらに小さくする */
-@media (max-width:480px){
-  body {
-    background-size: 90px auto, 90px auto !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
