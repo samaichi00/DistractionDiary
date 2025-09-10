@@ -13,6 +13,26 @@ body{
   background-position:left top,right top;
   background-repeat:repeat-y,repeat-y;
   background-attachment:fixed,fixed;
+  /* 叶：蔓サイズ調整＋連続スクロール */
+body{
+  background-color:#000;
+  background-image:url("vine-left.png"), url("vine-right.png");
+  background-position: left top, right top;
+  background-repeat: repeat-y, repeat-y;
+  background-attachment: scroll, scroll;      /* ← fixed をやめる */
+  background-size: 120px auto, 120px auto;    /* ← 好みで 100~160px に調整 */
+  color:#fff;
+  font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
+  line-height:1.8;
+  text-align:center;
+  margin:0; padding:0;
+}
+
+/* スマホはさらに細く */
+@media (max-width:480px){
+  body{ background-size: 90px auto, 90px auto; }
+}
+
   color:#fff;  /* 文字は白（中立） */
   font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
   line-height:1.8;
@@ -88,6 +108,7 @@ h1.site-title{
   line-height:1.1 !important;
   margin:0.5em 0 !important;
 }
+
 
 
 
