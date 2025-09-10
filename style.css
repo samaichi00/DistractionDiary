@@ -46,3 +46,21 @@ a:hover {
   content: "";   /* TOP を消す */
 }
 
+/* ===== Aboutページ用カスタム ===== */
+h2 {
+  color: #58c1d8;   /* 水色 */
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1em 0 0.5em 0;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1.2em;  /* 太字＋サイズアップ */
+}
+
+.warning {
+  color: #960018;    /* カーマインレッド */
+  font-weight: bold;
+}
+
