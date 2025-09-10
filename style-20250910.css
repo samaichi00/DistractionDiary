@@ -154,6 +154,13 @@ body{
 @media (max-width:480px){
   body{ background-size:90px auto, 90px auto !important; }
 }
+/* スマホ用にさらに小さくする */
+@media (max-width:480px){
+  body {
+    background-size: 90px auto, 90px auto !important;
+  }
+}
+
 
 
 
