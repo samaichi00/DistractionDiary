@@ -166,5 +166,36 @@ h2 {
 .toc-list a.extra:visited {
   color: #fff;
 }
+/* ===== リンク色指定（最優先で上書き） ===== */
+
+/* 通常リンク：白→赤→水色 */
+.toc-list a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.toc-list a:hover { color: red !important; }
+.toc-list a:visited { color: #58c1d8 !important; }
+
+/* 番外編だけ：ライム→黄→白 */
+.toc-list a.extra {
+  color: limegreen !important;
+}
+.toc-list a.extra:hover {
+  color: yellow !important;
+}
+.toc-list a.extra:visited {
+  color: #fff !important;
+}
+
+/* 番外編見出しサイズを調整 */
+h2.sec {
+  color: #58c1d8;
+  font-size: 1.1rem !important;
+  margin: 28px 0 8px !important;
+  font-weight: 700;
+}
+
+
 
 
