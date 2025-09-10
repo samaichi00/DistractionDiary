@@ -1,5 +1,10 @@
 /* ===== 共通スタイル ===== */
 body{
+  /* site default links */
+a{ color: purple; text-decoration: none; }
+a:hover{ color: yellow; }
+a:visited{ color: lightblue; }
+
   background-color:#000;
   background-image:url("vine-left.png"),url("vine-right.png");
   background-position:left top,right top;
@@ -91,6 +96,7 @@ h2{ color:#58c1d8; font-weight:bold; font-size:1.5em; margin:1em 0 0.5em 0; }
   .page h1{ font-size:1.9rem; }
   .toc-list a{ font-size:1rem; }
 }
+
 
 
 
