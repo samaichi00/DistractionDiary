@@ -136,6 +136,13 @@ body{
   background-attachment:scroll, scroll !important;
   background-size:120px auto, 120px auto !important;
 }
+/* About/Story の表題だけ Playfair Display にする */
+.page-about .page h1,
+.page-story  .page h1{
+  font-family: 'Playfair Display', 'Times New Roman', serif !important;
+  font-weight: 700;
+}
+
 
 
 
