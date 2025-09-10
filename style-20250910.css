@@ -96,6 +96,15 @@ h2{ color:#58c1d8; font-weight:bold; font-size:1.5em; margin:1em 0 0.5em 0; }
   .page h1{ font-size:1.9rem; }
   .toc-list a{ font-size:1rem; }
 }
+/* ストーリーは素のテキストをそのまま表示 */
+.story-pre{
+  white-space: pre-wrap;   /* 改行・連続空白をそのまま表示 */
+  line-height: 1.8;
+  margin: 0;
+  font-family: inherit;
+  word-break: break-word;  /* 長い行のはみ出し防止 */
+}
+
 
 
 
