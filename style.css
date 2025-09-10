@@ -1,5 +1,39 @@
 /* ===== 共通スタイル ===== */
 body {
+  /* 番外編：見出しとリンクを横一列＆色は白基準 */
+.extra-row{
+  display:flex;
+  justify-content:center;
+  align-items:baseline;
+  gap:12px;
+  margin-top:24px;
+}
+
+/* 見出しは白く小さめに */
+.extra-row .sec{
+  color:#fff !important;
+  font-size:1rem !important;
+  margin:0 !important;
+  font-weight:700;
+}
+
+/* 横並びのリンク群 */
+.toc-inline{
+  display:flex;
+  gap:16px;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+/* 番外編リンクは白 → ホバー黄 → 既読も白 */
+.toc-inline a{
+  color:#fff !important;
+  text-decoration:none;
+}
+.toc-inline a:hover{ color:yellow !important; }
+.toc-inline a:visited{ color:#fff !important; }
+
   background-color: #000;
   background-image: url("vine-left.png"), url("vine-right.png");
   background-position: left top, right top;
@@ -195,6 +229,7 @@ h2.sec {
   margin: 28px 0 8px !important;
   font-weight: 700;
 }
+
 
 
 
