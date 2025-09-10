@@ -122,4 +122,29 @@ body.orewa .back a:visited{ color:#98FF98; } /* Mint */
   .page h1{ font-size:1.9rem; }
   .toc-list a{ font-size:1rem; }
 }
+/* ====== 強制上書き：見出し ====== */
+/* 既定：全部のページで h1/h2 は白＆控えめサイズ */
+.page h1{
+  color:#fff !important;
+  font-size:2.2rem;
+  line-height:1.3;
+  margin:0 0 8px;
+  font-weight:700;
+}
+.page h2{
+  color:#fff !important;
+  font-size:1.2rem !important;
+  margin:1.2em 0 .6em !important;
+  font-weight:700 !important;
+}
+
+/* 五条シリーズのページだけ水色にする */
+body.gojo .page h1{ color:#58c1d8 !important; }
+
+/* おれとわたしは白＋影 */
+body.orewa .page h1{
+  color:#fff !important;
+  text-shadow:0 0 8px rgba(64,224,208,.45),0 0 18px rgba(64,224,208,.30);
+}
+
 
