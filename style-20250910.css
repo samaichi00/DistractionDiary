@@ -1,120 +1,65 @@
-/* ===== 共通スタイル ===== */
+/* ====== 全体適用：黒背景＋蔓（だけ） ====== */
 body{
   background-color:#000;
   background-image:url("vine-left.png"),url("vine-right.png");
   background-position:left top,right top;
   background-repeat:repeat-y,repeat-y;
   background-attachment:fixed,fixed;
-  color:#fff;
+  color:#fff;  /* 文字は白（中立） */
   font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
   line-height:1.8;
   text-align:center;
-  margin:0;
-  padding:0;
+  margin:0; padding:0;
 }
 
-/* サイト共通リンク（通常ページ用） */
-a{ color: purple; text-decoration: none; }
-a:hover{ color: yellow; }
-a:visited{ color: lightblue; }
+/* ====== 共通レイアウト（中立） ====== */
+.page{ max-width:680px; margin:0 auto; padding:48px 20px 64px; text-align:center; }
+.page h1,.page h2{ color:#fff; font-weight:700; }
+.page h1{ font-size:2.2rem; line-height:1.3; margin:0 0 8px; }
+.page h2{ font-size:1.2rem; margin:1.2em 0 .6em; }
 
-/* タイトル（トップ用） */
-h1.site-title{
-  font-family:'Abril Fatface',serif;
-  font-size:3.5em;
-  color:#ff00bf;
-  line-height:1.1;
-  margin:0.5em 0;
-}
+/* 共通リンク（中立）。シリーズ別は下で上書き */
+a{ color:purple; text-decoration:none; }
+a:hover{ color:yellow; }
+a:visited{ color:lightblue; }
 
-/* サブタイトル */
-.subtitle{ font-style:italic; margin:0.2em 0 1em 0; }
-
-/* ナビ用（必要なら） */
-.nav--no-prefix::before{ content:""; }
-
-/* About 用 */
-h2{ color:#58c1d8; font-weight:bold; font-size:1.5em; margin:1em 0 0.5em 0; }
-.label{ font-weight:bold; font-size:1.2em; }
-.warning{ color:#960018; font-weight:bold; }
-
-/* ===== ページ共通枠 ===== */
-.page{
-  max-width:680px;
-  margin:0 auto;
-  padding:48px 20px 64px;
-  text-align:center;
-}
-
-/* 見出し：デフォルトは白。シリーズ別は下で上書き */
-.page h1{
-  color:#fff;
-  font-size:2.2rem;
-  line-height:1.3;
-  margin:0 0 8px;
-  font-weight:700;
-}
-
-/* ===== シリーズ別カスタム ===== */
-/* 五条：見出しを水色に */
-body.gojo .page h1{ color:#58c1d8; }
-
-/* おれとわたし：見出しは白＋ターコイズの光 */
-body.orewa .page h1{
-  color:#fff;
-  text-shadow: 0 0 8px rgba(64,224,208,.45), 0 0 18px rgba(64,224,208,.30);
-}
-/* おれとわたし：リンク配色（白→ホバー=ターコイズ→既読=ミント） */
-body.orewa .toc-list a,
-body.orewa .back a{ color:#fff; }
-body.orewa .toc-list a:hover,
-body.orewa .back a:hover{ color:#40E0D0; }   /* Turquoise */
-body.orewa .toc-list a:visited,
-body.orewa .back a:visited{ color:#98FF98; } /* Mint */
-
-/* ===== 目次リスト（共通） ===== */
-.toc-list{
-  list-style:none;
-  padding:0;
-  margin:0 0 20px;
-  display:grid;
-  gap:10px;
-}
-.toc-list li{
-  position:relative;
-  padding:8px 12px;
-  border-top:1px solid rgba(255,255,255,.15);
-}
+/* 目次リスト（中立） */
+.toc-list{ list-style:none; padding:0; margin:0 0 20px; display:grid; gap:10px; }
+.toc-list li{ position:relative; padding:8px 12px; border-top:1px solid rgba(255,255,255,.15); }
 .toc-list li:first-child{ border-top:none; }
-
-/* 目次リンクの基本：白→ホバー赤→既読=水色（シリーズ別で上書き可） */
-.toc-list a{
-  color:#fff;
-  text-decoration:none;
-  font-size:1.05rem;
-}
+.toc-list a{ color:#fff; text-decoration:none; font-size:1.05rem; }
 .toc-list a:hover{ color:red; }
 .toc-list a:visited{ color:#58c1d8; }
 
-/* 五条の番外編（1行リンク）：白→ホバー黄→既読=黒 */
-.toc-list a.bonus{ color:#fff; }
-.toc-list a.bonus:hover{ color:yellow; }
-.toc-list a.bonus:active,
-.toc-list a.bonus:visited{ color:#000; }
-
-/* 戻るリンク（共通の基本色） */
+/* 戻るリンク（中立） */
 .back a{ color:#fff; text-decoration:none; }
 .back a:hover{ color:red; }
 .back a:visited{ color:#58c1d8; }
 
 /* 本文：素のテキストをそのまま表示 */
 .story-pre{
-  white-space: pre-wrap;   /* 改行・連続空白を保持 */
-  line-height: 1.8;
-  margin: 0;
-  font-family: inherit;
-  word-break: break-word;  /* 長い行のはみ出し防止 */
+  white-space: pre-wrap; line-height:1.8; margin:0; font-family:inherit; word-break:break-word;
 }
+
+/* ====== 個別適用（ページごとの上書き） ====== */
+/* 五条：タイトル水色だけを付与 */
+.theme-gojo .page h1{ color:#58c1d8; }
+/* 五条の番外編（1行リンク） */
+.toc-list a.bonus{ color:#fff; }
+.toc-list a.bonus:hover{ color:yellow; }
+.toc-list a.bonus:active, .toc-list a.bonus:visited{ color:#000; }
+
+/* おれとわたし：タイトル白＋ターコイズの光、リンク配色を変更 */
+.theme-orewa .page h1{
+  color:#fff;
+  text-shadow:0 0 8px rgba(64,224,208,.45),0 0 18px rgba(64,224,208,.30);
+}
+.theme-orewa .toc-list a, .theme-orewa .back a{ color:#fff; }
+.theme-orewa .toc-list a:hover, .theme-orewa .back a:hover{ color:#40E0D0; }   /* Turquoise */
+.theme-orewa .toc-list a:visited, .theme-orewa .back a:visited{ color:#98FF98; } /* Mint */
+
+/* Aboutだけ：h2を水色（他ページは白のまま） */
+.page-about .page h2{ color:#58c1d8; font-size:1.5em; margin:1em 0 .5em; }
 
 /* スマホ微調整 */
 @media (max-width:480px){
@@ -122,40 +67,4 @@ body.orewa .back a:visited{ color:#98FF98; } /* Mint */
   .page h1{ font-size:1.9rem; }
   .toc-list a{ font-size:1rem; }
 }
-/* ====== 強制上書き：見出し ====== */
-/* 既定：全部のページで h1/h2 は白＆控えめサイズ */
-.page h1{
-  color:#fff !important;
-  font-size:2.2rem;
-  line-height:1.3;
-  margin:0 0 8px;
-  font-weight:700;
-}
-.page h2{
-  color:#fff !important;
-  font-size:1.2rem !important;
-  margin:1.2em 0 .6em !important;
-  font-weight:700 !important;
-}
-
-/* 五条シリーズのページだけ水色にする */
-body.gojo .page h1{ color:#58c1d8 !important; }
-
-/* おれとわたしは白＋影 */
-body.orewa .page h1{
-  color:#fff !important;
-  text-shadow:0 0 8px rgba(64,224,208,.45),0 0 18px rgba(64,224,208,.30);
-}
-/* 展示室などの小見出し(h2)は白に固定 */
-.page h2 { 
-  color:#fff !important; 
-  font-size:1.2rem !important;
-  margin:1.2em 0 .6em !important;
-  font-weight:700 !important;
-}
-
-/* 五条ページだけは h1 を水色に（既存のまま） */
-body.gojo .page h1 { color:#58c1d8 !important; }
-
-
 
