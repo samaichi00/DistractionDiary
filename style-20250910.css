@@ -146,5 +146,16 @@ body.orewa .page h1{
   color:#fff !important;
   text-shadow:0 0 8px rgba(64,224,208,.45),0 0 18px rgba(64,224,208,.30);
 }
+/* 展示室などの小見出し(h2)は白に固定 */
+.page h2 { 
+  color:#fff !important; 
+  font-size:1.2rem !important;
+  margin:1.2em 0 .6em !important;
+  font-weight:700 !important;
+}
+
+/* 五条ページだけは h1 を水色に（既存のまま） */
+body.gojo .page h1 { color:#58c1d8 !important; }
+
 
 
