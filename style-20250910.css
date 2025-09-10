@@ -8,11 +8,23 @@ body{
   line-height:1.1 !important;
   margin:0.5em 0 !important;
 }
+body{
+  /* ▼ここから背景設定（置き換え） */
   background-color:#000;
-  background-image:url("vine-left.png"),url("vine-right.png");
-  background-position:left top,right top;
-  background-repeat:repeat-y,repeat-y;
-  background-attachment:fixed,fixed;
+  background-image:url("vine-left.png"), url("vine-right.png");
+  background-position:left top, right top;
+  background-repeat:repeat-y, repeat-y;
+  background-attachment:scroll, scroll;              /* fixed → scroll */
+  background-size:120px auto, 120px auto;            /* 幅を小さく（好みで100〜160） */
+  /* ▲ここまで */
+
+  color:#fff;
+  font-family:"游明朝","Yu Mincho","Hiragino Mincho ProN",serif;
+  line-height:1.8;
+  text-align:center;
+  margin:0; padding:0;
+}
+
   @font-face{
   font-family: 'Playfair Display Local';
   src: url('playfair_Display.woff2') format('woff2');
@@ -116,6 +128,15 @@ h1.site-title{
   line-height:1.1 !important;
   margin:0.5em 0 !important;
 }
+@media (max-width:480px){
+  body{ background-size:90px auto, 90px auto; }
+}
+/* 強制上書き（最後に置く） */
+body{
+  background-attachment:scroll, scroll !important;
+  background-size:120px auto, 120px auto !important;
+}
+
 
 
 
