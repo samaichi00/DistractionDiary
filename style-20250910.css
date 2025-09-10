@@ -142,6 +142,19 @@ body{
   font-family: 'Playfair Display', 'Times New Roman', serif !important;
   font-weight: 700;
 }
+/* === 全ページ強制：黒＋蔓（最後に置く） === */
+body{
+  background-color:#000 !important;
+  background-image:url("vine-left.png"), url("vine-right.png") !important;
+  background-position:left top, right top !important;
+  background-repeat:repeat-y, repeat-y !important;
+  background-attachment:scroll, scroll !important;   /* 連続スクロール */
+  background-size:120px auto, 120px auto !important; /* 太さは好みで調整 */
+}
+@media (max-width:480px){
+  body{ background-size:90px auto, 90px auto !important; }
+}
+
 
 
 
